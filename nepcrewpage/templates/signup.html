@@ -1,0 +1,28 @@
+{% extends 'layouts.html' %}
+{% block content %}
+{% load static %}
+
+<section class="products">
+
+  <div class="form-box">
+  
+  <h2>Signup</h2>
+  
+  <form method="post">
+    {% csrf_token %}
+    {% if error %}
+      <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <input name="username" type="text" placeholder="Username" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="password1" type="password" placeholder="Password" required>
+    <input name="password2" type="password" placeholder="Confirm Password" required>
+    
+    <button type="submit" class="add-btn">Create Account</button>
+  </form>
+  
+  </div>
+  
+  </section>
+  
+{% endblock %}

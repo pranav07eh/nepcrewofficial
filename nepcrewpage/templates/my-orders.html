@@ -1,0 +1,109 @@
+{% extends 'layouts.html' %}
+{% load static %}
+{% block content %}
+<div class="orders-container">
+  <h1>My Orders</h1>
+  {% if orders %}
+    <div class="orders-list">
+      {% for order in orders %}
+        <div class="order-card">
+          <div class="order-header">
+            <h3>Order #{{ order.id }}</h3>
+            <span class="status status-{{ order.status|lower }}">{{ order.status }}</span>
+          </div>
+          <p><strong>Total:</strong> NPR {{ order.total_amount }}</p>
+          <p><strong>Date:</strong> {{ order.created_at|date:"M d, Y" }}</p>
+          <div class="order-actions">
+            <a href="/order-success/{{ order.id }}/" class="view-btn">View Details</a>
+            {% if order.screenshot %}
+              <a href="{{ order.screenshot.url }}" target="_blank" class="proof-btn">View Proof</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="no-orders">No orders yet. <a href="{% url 'products' %}">Start shopping</a></p>
+  {% endif %}
+</div>
+
+<style>
+.orders-container {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid var(--red);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-paid { background: rgba(0,255,136,0.2); color: #00ff88; }
+.status-received { background: rgba(255,193,7,0.2); color: #ffc107; }
+.status-shipped { background: rgba(66,139,202,0.2); color: #4285f4; }
+.status-delivered { background: rgba(76,175,80,0.2); color: #4caf50; }
+.status-completed { background: rgba(0,255,136,0.3); color: #00ff88; }
+
+.order-actions {
+  margin-top: 15px;
+}
+
+.view-btn, .proof-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 10px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.view-btn {
+  background: var(--red);
+  color: white;
+}
+
+.proof-btn {
+  background: #4285f4;
+  color: white;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 60px;
+  color: #ccc;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+</style>
+{% endblock %}

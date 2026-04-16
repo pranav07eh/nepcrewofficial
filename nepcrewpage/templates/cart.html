@@ -1,0 +1,51 @@
+{% extends 'layouts.html' %}
+{% block content %}
+
+
+<div class="container">
+
+  <h1>Your Cart</h1>
+
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Size</th>
+        <th>Qty</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart_items %}
+      <tr>
+        <td>{{ item.product.name }}</td>
+<td>NPR {{ item.product.price }}</td>
+        <td>{{ item.size }}</td>
+        <td>{{ item.quantity }}</td>
+<td>NPR {{ item.total_price }}</td>
+        <td>
+          <a href="{% url 'remove' item.id %}" class="delete-btn">Delete</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="6">Your cart is empty.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="cart-summary">
+
+    <h2>Grand Total: NPR {{ total }}</h2>
+  
+    <a href="{% url 'checkout' %}" class="buy-now-btn">Buy Now</a>
+  
+  </div>
+
+</div>
+
+
+{% endblock %}

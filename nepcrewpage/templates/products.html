@@ -1,0 +1,46 @@
+{% extends 'layouts.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="products">
+
+
+  <div class="products">
+      <div class="container">
+    
+  <div class="products-grid">
+    {% for product in products %}
+      <div class="product-card">
+        <div class="product-image">
+          <img src="{% static 'images/hoodie.png' %}" alt="{{ product.name }}">
+        </div>
+        <div class="product-info">
+<p>{{ product.name }} - NPR {{ product.price }}</p>
+          <div class="product-actions">
+            <a href="{% url 'hoodie' %}">
+<button class="btn btn-small">View</button>
+            </a>
+            <form method="post" action="{% url 'add_to_cart' %}" class="inline-form">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="{{ product.id }}">
+              <input type="hidden" name="size" value="M">
+              <input type="hidden" name="qty" value="1">
+              <button type="submit" class="btn btn-cart btn-small">Add to Cart</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No products available.</p>
+    {% endfor %}
+  </div>
+    
+      </div>
+    </div>
+
+
+
+</section>
+{% endblock %}

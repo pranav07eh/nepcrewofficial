@@ -1,0 +1,186 @@
+
+{% extends 'layouts.html' %}
+{% load static %}
+{% block content %}
+<main class="payment-main">
+  <div class="payment-wrapper">
+    <div class="payment-header">
+      <h1>Complete Your Payment</h1>
+      <div class="order-summary">
+        <h3>Order #{{ order.id }}</h3>
+        <p class="total-price">Total: NPR {{ order.total_amount }}</p>
+      </div>
+    </div>
+
+    <!-- Order Items Table -->
+    <div class="order-items-section">
+      <h3>Your Order Items</h3>
+      <table class="order-items-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>NPR {{ item.price|floatformat:2 }}</td>
+            <td>NPR {{ item.total|floatformat:2 }}</td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="4">No items</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="payment-methods">
+      <h3>Choose Payment Method</h3>
+      <div class="method-buttons">
+        <button class="method-btn active" data-method="khalti" onclick="showMethod('khalti')">
+          <img src="{% static 'images/khalti.png' %}" alt="Khalti" loading="lazy">
+          <span>Khalti</span>
+        </button>
+        <button class="method-btn" data-method="esewa" onclick="showMethod('esewa')">
+          <img src="{% static 'images/esewa.png' %}" alt="eSewa" loading="lazy">
+          <span>eSewa</span>
+        </button>
+        <button class="method-btn" data-method="bank" onclick="showMethod('bank')">
+          <img src="{% static 'images/bank.png' %}" alt="Bank" loading="lazy">
+          <span>Bank Transfer</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="method-display" class="method-display">
+      <p>Select a payment method to view instructions</p>
+    </div>
+    
+    <div class="pay-later-section" style="text-align: center; margin: 30px 0;">
+      <hr style="border:0; height:3px; background: linear-gradient(90deg, transparent, #ff1e1e, #ff6b35, transparent); margin: 30px 0; width: 100%;">
+      <button type="button" id="pay-later-btn" onclick="togglePayLaterBtn()" class="method-btn" style="width: 340px; max-width: 90%; height: 90px; justify-content: center; align-items: center; flex-direction: column; gap: 4px; padding: 12px; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 2px solid #444; box-shadow: 0 8px 25px rgba(0,0,0,0.5); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); white-space: nowrap;">
+        <span id="pay-later-icon" style="font-size: 22px; margin: 0; line-height: 1; transition: 0.4s ease;">➕</span>
+        <div style="line-height: 1.2;">
+          <strong style="font-size: 16px; color: #fff; display: block;">Pay Later</strong>
+          <small style="color: #aaa; font-size: 12px; display: block;">Admin will contact via WhatsApp for payment</small>
+        </div>
+      </button>
+      <input type="hidden" name="pay_option" value="now" id="pay_option_hidden">
+    </div>
+
+    <form method="POST" enctype="multipart/form-data" class="confirm-form" onsubmit="if (typeof trackEvent === 'function') trackEvent('Payment Proof Submitted', {order_id: '{{ order.id }}'});">
+      {% csrf_token %}
+      <div class="confirm-section">
+        <div id="proof-fields" style="display: block;">
+          <label>Payment Reference <span style="color:red;">*</span></label>
+          <input type="text" name="reference" placeholder="TXN123456 or Order #{{ order.id }}" required>
+          <label>Payment Screenshot <span style="color:red;">*</span></label>
+          <input type="file" name="screenshot" accept="image/*" required>
+        </div>
+        <button type="submit" class="confirm-btn" id="proof-btn">Submit Payment Proof</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<script>
+function showMethod(method) {
+  const buttons = document.querySelectorAll('.method-btn');
+  const display = document.getElementById('method-display');
+  
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  
+  // Track payment method selection
+  if (typeof trackEvent === 'function') {
+    trackEvent('Payment Method Selected', {method: method});
+  }
+  
+  let html = '';
+  switch(method) {
+    case 'khalti':
+      html = `
+        <div class="method-info">
+          <p style="color:#fff; font-weight:bold; font-size:16px;">Khalti QR Code</p>
+          <img src="{% static 'images/khalti.png' %}" alt="Khalti QR" style="width:200px;height:200px; border:2px solid #fff; border-radius:8px; object-fit: contain;">
+          <p style="color:#fff; font-weight:bold;">Scan QR or dial *922#</p>
+          <p style="color:#ff1e1e; font-weight:bold; font-size:18px;">Amount: NPR {{ order.total_amount }}</p>
+        </div>
+      `;
+      break;
+    case 'esewa':
+      html = `
+        <div class="method-info">
+          <p style="color:#fff; font-weight:bold; font-size:16px;">eSewa QR Code</p>
+          <img src="{% static 'images/esewa.png' %}" alt="eSewa QR" style="width:200px;height:200px; border:2px solid #fff; border-radius:8px; object-fit: contain;">
+          <p style="color:#fff; font-weight:bold;">Scan QR with eSewa app</p>
+          <p style="color:#ff1e1e; font-weight:bold; font-size:18px;">Amount: NPR {{ order.total_amount }}</p>
+        </div>
+      `;
+      break;
+    case 'bank':
+      html = `
+        <div class="method-info bank">
+          <img src="{% static 'images/bank.png' %}" alt="Bank QR" style="width:200px;height:200px; border:2px solid #fff; border-radius:8px; object-fit: contain;">
+          <h4>Bank Details</h4>
+          <p>Nepal Investment Bank Ltd</p>
+          <p>A/c: 001-01-1234567</p>
+          <p>Name: nepCREW Official</p>
+          <p>Email reference after transfer: order{{ order.id }}</p>
+        </div>
+      `;
+      break;
+  }
+  display.innerHTML = html;
+}
+</script>
+    <script>
+
+
+function togglePayLaterBtn() {
+  const btn = document.getElementById('pay-later-btn');
+  const icon = document.getElementById('pay-later-icon');
+  const hiddenInput = document.getElementById('pay_option_hidden');
+  const proofFields = document.getElementById('proof-fields');
+  const proofBtn = document.getElementById('proof-btn');
+  
+  if (hiddenInput.value === 'now') {
+    // Switch to pay later
+    hiddenInput.value = 'later';
+    icon.textContent = '✅';
+    btn.style.background = 'linear-gradient(135deg, #ff1e1e, #cc1616)';
+    btn.style.borderColor = '#ff4444';
+    btn.style.transform = 'scale(1.05)';
+    btn.style.boxShadow = '0 12px 35px rgba(255,30,30,0.4)';
+    proofFields.style.display = 'none';
+    proofBtn.textContent = 'Confirm Pay Later (Admin WhatsApp)';
+    proofBtn.onclick = function(e) {
+      e.preventDefault();
+      document.querySelector('form.confirm-form').submit();
+    };
+  } else {
+    // Switch back to pay now
+    hiddenInput.value = 'now';
+    icon.textContent = '➕';
+    btn.style.background = 'linear-gradient(135deg, #1a1a1a, #2a2a2a)';
+    btn.style.borderColor = '#444';
+    btn.style.transform = 'scale(1)';
+    btn.style.boxShadow = '0 8px 25px rgba(0,0,0,0.5)';
+    proofFields.style.display = 'block';
+    proofBtn.textContent = 'Submit Payment Proof';
+    proofBtn.onclick = null;
+  }
+}
+
+// Run on load to check if pay later was selected
+document.addEventListener('DOMContentLoaded', function() {
+  const payLater = document.querySelector('input[name="pay_option"]:checked');
+  if (payLater) togglePayLater();
+});
+    </script>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'layouts.html' %}
+{% load static %}
+{% block content %}
+<div class="product-page">
+  <div class="product-container">
+    {% if product %}
+    <div class="product-left">
+      <img src="{% static 'images/hoodie.png' %}" alt="{{ product.name }}">
+    </div>
+    <div class="product-right">
+      <h1>{{ product.name }}</h1>
+      <p class="price">NPR {{ product.price }}</p>
+      
+      <div class="size-box">
+        <label>Select Size:</label>
+        <div class="size-options">
+          <button class="size-btn active" data-size="S">S</button>
+          <button class="size-btn" data-size="M">M</button>
+          <button class="size-btn" data-size="L">L</button>
+          <button class="size-btn" data-size="XL">XL</button>
+        </div>
+      </div>
+      
+      <div class="qty-box">
+        <button onclick="changeQty(-1)">−</button>
+        <input type="number" id="qty" value="1" min="1">
+        <button onclick="changeQty(1)">+</button>
+      </div>
+      
+      <div class="btn-group">
+        <form method="post" action="{% url 'add_to_cart' %}" id="cart-form">
+          {% csrf_token %}
+          <input type="hidden" name="product_id" value="{{ product.id }}">
+          <button type="submit" class="btn-cart">Add to Cart</button>
+        </form>
+        <button class="btn-buy" onclick="buyNow()">Buy Now</button>
+      </div>
+    </div>
+    {% else %}
+    <p>No product found.</p>
+    {% endif %}
+  </div>
+</div>
+<script>
+let selectedSize = 'M';
+document.querySelectorAll('.size-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelector('.size-btn.active').classList.remove('active');
+    btn.classList.add('active');
+    selectedSize = btn.dataset.size;
+    updateForm();
+  });
+});
+
+function updateForm() {
+  const form = document.getElementById('cart-form');
+  let qtyInput = document.getElementById('qty');
+  let qty = qtyInput ? parseInt(qtyInput.value) : 1;
+  
+  let sizeInput = document.querySelector('input[name="size"]');
+  if (!sizeInput) {
+    sizeInput = document.createElement('input');
+    sizeInput.type = 'hidden';
+    sizeInput.name = 'size';
+    form.appendChild(sizeInput);
+  }
+  sizeInput.value = selectedSize;
+  
+  let qtyInputHidden = document.querySelector('input[name="qty"]');
+  if (!qtyInputHidden) {
+    qtyInputHidden = document.createElement('input');
+    qtyInputHidden.type = 'hidden';
+    qtyInputHidden.name = 'qty';
+    form.appendChild(qtyInputHidden);
+  }
+  qtyInputHidden.value = qty;
+}
+
+function changeQty(change) {
+  let qtyInput = document.getElementById('qty');
+  let currentVal = parseInt(qtyInput.value) || 1;
+  let newVal = Math.max(1, currentVal + change);
+  qtyInput.value = newVal;
+  updateForm();
+}
+
+updateForm(); // Initial call
+
+function buyNow() {
+  // Create form data from current state
+  const formData = new FormData();
+  formData.append('product_id', '{{ product.id }}');
+  formData.append('size', selectedSize);
+  formData.append('qty', document.getElementById('qty').value || 1);
+
+  // POST to add to cart first
+  fetch('{% url "add_to_cart" %}', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+    }
+  }).then(() => {
+    window.location.href = '{% url "checkout" %}';
+  }).catch(err => {
+    console.error('Error', err);
+    window.location.href = '{% url "checkout" %}';
+  });
+}
+
+</script>
+{% endblock %}
