@@ -31,8 +31,8 @@ ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1', '*']
 import os
 from pathlib import Path
 # import dj_database_url
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 
 # Application definition
@@ -132,7 +132,16 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-INSTALLED_APPS = ['whitenoise.runserver_nostatic'] + INSTALLED_APPS
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
+    'nepcrewpage',
+]
 
 # Media files
 MEDIA_URL = '/media/'
