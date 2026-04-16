@@ -23,9 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1in(nf&0o#4w8yb8=4fwqr)&kymoa(yfdjoq2+m0l0(0-8kjvh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+import os
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1', '*']
+
+import os
+from pathlib import Path
+# import dj_database_url
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Application definition
@@ -38,19 +45,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nepcrewpage',
+    'whitenoise.runserver_nostatic',
 ]
 
 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
 ]
 
 ROOT_URLCONF = 'backend2pm.urls'
@@ -83,6 +91,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+    
 
 
 # Password validation
@@ -120,8 +129,10 @@ USE_TZ = True
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+INSTALLED_APPS = ['whitenoise.runserver_nostatic'] + INSTALLED_APPS
 
 # Media files
 MEDIA_URL = '/media/'
