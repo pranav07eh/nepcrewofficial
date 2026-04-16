@@ -14,7 +14,8 @@
     {% for product in products %}
       <div class="product-card">
         <div class="product-image">
-          <img src="{% static 'images/hoodie.png' %}" alt="{{ product.name }}">
+          <img src="{{ product.image.url|default:'/static/images/hoodie.png' }}" alt="{{ product.name }}" style="object-fit: cover;">
+
         </div>
         <div class="product-info">
 <p>{{ product.name }} - NPR {{ product.price }}</p>
