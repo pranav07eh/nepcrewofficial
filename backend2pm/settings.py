@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nepcrewpage',
-    'whitenoise.runserver_nostatic',
 ]
 
 
@@ -139,9 +138,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'whitenoise.runserver_nostatic',
     'nepcrewpage',
 ]
+
 
 # Media files
 MEDIA_URL = '/media/'
