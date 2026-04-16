@@ -3,7 +3,7 @@ services:
     name: nepcrew
     env: python
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --no-input"
-    startCommand: "gunicorn --bind 0.0.0.0:$PORT backend2pm.wsgi"
+startCommand: "gunicorn --bind 0.0.0.0:$PORT backend2pm.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.12
