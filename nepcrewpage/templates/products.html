@@ -20,7 +20,8 @@
         <div class="product-info">
 <p>{{ product.name }} - NPR {{ product.price }}</p>
           <div class="product-actions">
-            <a href="{% url 'hoodie' %}">
+            <a href="{% url 'hoodie' product.id %}">
+
 <button class="btn btn-small">View</button>
             </a>
             <form method="post" action="{% url 'add_to_cart' %}" class="inline-form">

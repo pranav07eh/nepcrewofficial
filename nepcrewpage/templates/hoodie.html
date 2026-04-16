@@ -5,7 +5,8 @@
   <div class="product-container">
     {% if product %}
     <div class="product-left">
-      <img src="{% static 'images/jersey.png' %}" alt="{{ product.name }}">
+      <img src="{{ product.image.url|default:'/static/images/hoodie.png' }}" alt="{{ product.name }}">
+
     </div>
     <div class="product-right">
       <h1>{{ product.name }}</h1>
