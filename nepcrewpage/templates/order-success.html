@@ -1,0 +1,119 @@
+{% extends 'layouts.html' %}
+{% load static %}
+{% block content %}
+<div class="success-container">
+  <div class="success-card">
+    <div class="checkmark">
+      ✅
+    </div>
+<h1>Order #{{ order.id }} Placed Successfully!</h1>
+    <p class="order-id">Order #{{ order.id }}</p>
+<p class="status">Status: {{ order.status }}</p>
+{% if pay_option == "later" %}
+      <p>An admin will contact you via WhatsApp within 24 hours to confirm your payment.</p>
+    {% else %}
+    <p>Thank you for your purchase! We will verify your payment shortly and keep you updated on your order status.</p>
+    {% endif %}
+    <div class="order-details">
+      <h3>Order Details</h3>
+      <p><strong>Total:</strong> NPR {{ order.total_amount }}</p>
+      <p><strong>Payment Reference:</strong> {{ order.reference|default:"N/A" }}</p>
+      <p><strong>Shipping to:</strong> {{ order.address }}</p>
+      <p><strong>Phone:</strong> {{ order.phone }}</p>
+      {% if order.screenshot %}
+        <p><strong>Payment Proof:</strong> <a href="{{ order.screenshot.url }}" target="_blank">View Screenshot</a></p>
+      {% endif %}
+    </div>
+    <div class="next-steps">
+      <h3>Next Steps</h3>
+      <p>Your order will be processed soon. <a href="{% url 'my_orders' %}">Track Orders</a></p>
+    </div>
+    <a href="{% url 'products' %}" class="shop-more-btn">Continue Shopping</a>
+  </div>
+</div>
+
+<style>
+.success-container {
+  padding: 60px 20px;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-card {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  border: 1px solid #333;
+}
+
+.checkmark {
+  font-size: 80px;
+  color: #00ff88;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px #00ff88;
+}
+
+.success-card h1 {
+  color: #00ff88;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.order-id {
+  font-size: 24px;
+  color: var(--red);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.status {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.order-details, .next-steps {
+  text-align: left;
+  margin: 25px 0;
+}
+
+.order-details h3, .next-steps h3 {
+  color: var(--red);
+  margin-bottom: 15px;
+}
+
+.order-details p {
+  margin: 8px 0;
+  color: #ddd;
+}
+
+.shop-more-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(45deg, var(--red), #cc0000);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.shop-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255,30,30,0.4);
+}
+
+@media (max-width: 600px) {
+  .success-card {
+    padding: 30px 20px;
+  }
+}
+</style>
+{% endblock %}
