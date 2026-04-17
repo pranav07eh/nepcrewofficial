@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('nepcrewpage.urls')),
+    path('', include('nepcrewpage.urls_fixed')),
     path('admin/', admin.site.urls),
 ]
 
