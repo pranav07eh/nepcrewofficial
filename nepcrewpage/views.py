@@ -34,12 +34,13 @@ def products(request):
 
 
 # FIXED HOODIE (NO CRASH)
-def hoodie_view(request, product_id=None):
-    clear_abandoned_cart(request)
-    product_id = int(product_id or 1)
+def product_detail(request, pk=None):\n    clear_abandoned_cart(request)\n    product_id = int(pk or 1)
     product = Product.objects.filter(id=product_id).first()
     cart_item_count = CartItem.objects.filter(user=request.user).count() if request.user.is_authenticated else 0
-    return render(request, "hoodie.html", {"product": product, "cart_item_count": cart_item_count})
+    return render(request, "product_detail.html", {"product": product, "cart_item_count": cart_item_count})</xai:function_call >
+
+<xai:function_call name="edit_file">
+<parameter name="path">nepcrewpage/urls.py
 
 
 
