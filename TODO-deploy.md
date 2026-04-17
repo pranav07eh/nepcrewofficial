@@ -8,7 +8,7 @@ Status: Local fixed, implementing final fixes for deploy.
 - [x] 3. Update runtime.txt to python-3.12
 - [ ] 4. source venv/bin/activate && python manage.py createsuperuser
 - [x] 5. source venv/bin/activate && python manage.py collectstatic --noinput
-- [ ] 6. Test local: http://127.0.0.1:8000/products/ /product/1/ etc.
+
 - [x] 7. git add . && git commit -m "Fix images, generic product view, ready deploy" && git push
 - [x] 8. Monitor Render logs (fixed Procfile port timeout)
 - [ ] 9. Test live site & admin
