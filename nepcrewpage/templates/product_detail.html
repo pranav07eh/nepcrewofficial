@@ -6,7 +6,6 @@
     {% if product %}
     <div class="product-left">
       <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/hoodie.png' %}{% endif %}" alt="{{ product.name }}" style="object-fit: cover;">
-
     </div>
     <div class="product-right">
       <h1>{{ product.name }}</h1>
