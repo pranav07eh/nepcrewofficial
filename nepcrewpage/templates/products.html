@@ -14,7 +14,7 @@
     {% for product in products %}
       <div class="product-card">
         <div class="product-image">
-<img src="{% if product.image %}{{ product.image.url }}{% elif "jersey" in product.name|lower %}{% static "images/jersey.png" %}{% else %}{% static "images/hoodie.png" %}{% endif %}" alt="{{ product.name }}" style="object-fit: cover;">
+          <img src="{% if product.image %}{{ product.image.url }}{% elif 'jersey' in product.name|lower %}{% static 'images/jersey.png' %}{% else %}{% static 'images/hoodie.png' %}{% endif %}" alt="{{ product.name }}" style="object-fit: cover;">
         </div>
         <div class="product-info">
 <p>{{ product.name }} - NPR {{ product.price }}</p>
