@@ -2,7 +2,7 @@ services:
   - type: web
     name: nepcrew
     env: python
-buildCommand: "pip install -r requirements.txt && python manage.py migrate --noinput && python manage.py collectstatic --no-input"
+buildCommand: "pip install -r requirements.txt && python manage.py migrate --noinput && python manage.py collectstatic --noinput"
 
 startCommand: "gunicorn --bind 0.0.0.0:$PORT backend2pm.wsgi:application"
     envVars:
