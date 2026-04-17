@@ -1,6 +1,5 @@
 {% extends 'layouts.html' %}
 {% block content %}
-{% load static %}
 <section class="slider">
 
   <div class="hero-text">
@@ -9,9 +8,9 @@
     <a href="{% url 'products' %}" class="hero-btn">Shop Now</a>
   </div>
 
-  <img src="{% static 'images/streetwear.png' %}" class="slide active">
-  <img src="{% static 'images/footwear.png' %}" class="slide">
-  <img src="{% static 'images/shoes.png' %}" class="slide">
+  <img src="/static/images/streetwear.png" class="slide active">
+  <img src="/static/images/footwear.png" class="slide">
+  <img src="/static/images/shoes.png" class="slide">
 
 
 
