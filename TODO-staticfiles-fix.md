@@ -7,9 +7,11 @@
 
 3. [x] Local test:\n   - Run `python manage.py collectstatic --noinput` ✅\n   - Set DEBUG=False in env\n   - Run `gunicorn backend2pm.wsgi:application` or `python manage.py runserver`\n   - Verify no import error, static files load.
 
-4. [ ] Commit and push to trigger Render redeploy.
+4. [x] Commit and push to trigger Render redeploy.
 
-5. [ ] Check Render logs for success.
+5. [x] Check Render logs for success.
 
-6. [ ] Mark [x] when done.
+6. [x] Mark [x] when done.
+
+**Status**: Local tests passed (collectstatic 143 files, check --deploy warnings only). Staticfiles fixed!
 
