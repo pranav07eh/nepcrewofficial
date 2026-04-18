@@ -1,4 +1,4 @@
-// Sparkles animation for nepCREW
+// Sparkles animation for nepCREW - MORE INTENSE
 document.addEventListener('DOMContentLoaded', () => {
   const sparkleBg = document.querySelector('.sparkle-bg');
   if (!sparkleBg) return;
@@ -6,21 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function createSparkle() {
     const sparkle = document.createElement('span');
     sparkle.style.left = Math.random() * 100 + '%';
-    sparkle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-    sparkle.style.animationDelay = Math.random() * 2 + 's';
+    sparkle.style.animationDuration = (Math.random() * 2 + 2) + 's'; // Faster
+    sparkle.style.animationDelay = 0;
     sparkleBg.appendChild(sparkle);
 
     setTimeout(() => {
       sparkle.remove();
-    }, 7000);
+    }, 4000);
   }
 
-  // Create sparkles continuously
-  setInterval(createSparkle, 300);
+  // Create MORE sparkles FASTER
+  setInterval(createSparkle, 100); // Every 100ms
 
-  // Initial sparkles
-  for (let i = 0; i < 5; i++) {
-    setTimeout(createSparkle, i * 200);
+  // Initial burst
+  for (let i = 0; i < 20; i++) {
+    setTimeout(createSparkle, i * 50);
   }
 });
 
