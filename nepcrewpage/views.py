@@ -8,7 +8,8 @@ from .models import Product, CartItem, Order
 # ---------------- PAGES ----------------
 
 def clear_abandoned_cart(request):
-    pass  # Disabled to persist cart items across pages
+    # Removed session clearing - was logging out users after inactivity
+    pass
 
 
 def home(request):
