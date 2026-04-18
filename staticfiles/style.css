@@ -16,7 +16,7 @@
     body{
     background:var(--bg);
     color:white;
-    padding-top:139px;
+    padding-top:65px;
     }
     
     /* NAV */
@@ -246,12 +246,25 @@
     }
     
     /* INFO */
-    .product-info{
+.product-info{
     padding:12px;
     display:flex;
     flex-direction:column;
     gap:8px;
-    }
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.product-price {
+    color: var(--red);
+    font-size: 18px;
+    font-weight: bold;
+}
+
     
     /* BUTTON */
     .add-btn{
@@ -723,7 +736,7 @@ transform:scale(1.05);
     background:#ddd;
     }
 
-    body{
+body{
         position:relative;
         overflow-x:hidden;
         }

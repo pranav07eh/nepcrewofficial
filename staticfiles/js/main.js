@@ -20,20 +20,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // QTY
-  let qty = 1;
-  // Qty handler disabled - pages use page-specific JS
-  // document.querySelectorAll('.qty-box button').forEach(btn => {
-  //   btn.addEventListener('click', () => {
-  //     const input = btn.parentElement.querySelector('input');
-  //     if (btn.textContent === '+') {
-  //       qty = parseInt(input.value) + 1;
-  //     } else if (qty > 1) {
-  //       qty = parseInt(input.value) - 1;
-  //     }
-  //     input.value = qty;
-  //   });
-  // });
+  // MOBILE HAMBURGER MENU
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  }
   
   // TOAST
   function showToast(message) {
@@ -48,16 +50,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000);
   }
 
-  // Track add to cart events (analytics.js handles .add-btn, .btn-cart clicks)
-  if (typeof trackEvent === 'function') {
-    document.querySelectorAll('.add-btn, .btn-cart').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const productName = btn.dataset.product || 'Unknown';
-        const size = document.getElementById('selectedSize')?.value || 'N/A';
-        const qty = document.querySelector('input[name="quantity"]')?.value || 1;
-        trackEvent('Add to Cart', {product: productName, size, qty});
-      });
+  // Track add to cart events
+  document.querySelectorAll('.add-btn, .btn-cart').forEach(btn => {
+    btn.addEventListener('click', () => {
+      showToast('Added to cart!');
+    });
+  });
+
+  // Contact form submit prevention (handled server-side)
+  const contactForm = document.querySelector('form[action=""]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      // Let POST happen server-side
     });
   }
 });
-

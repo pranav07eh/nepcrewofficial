@@ -17,7 +17,10 @@
           <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/hoodie.png' %}{% endif %}" alt="{{ product.name }}" style="object-fit: cover; width:100%; height:100%;">
         </div>
         <div class="product-info">
-<p>{{ product.name }} - NPR {{ product.price }}</p>
+
+<h3 class="product-name">{{ product.name }}</h3>
+<p class="product-price">NPR {{ product.price }}</p>
+
           <div class="product-actions">
             <a href="{% url 'product_detail' product.pk %}">
 
