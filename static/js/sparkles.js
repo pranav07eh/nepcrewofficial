@@ -1,4 +1,4 @@
-// Sparkles animation for nepCREW - MORE INTENSE
+sur// Sparkles animation for nepCREW - MORE INTENSE
 document.addEventListener('DOMContentLoaded', () => {
   const sparkleBg = document.querySelector('.sparkle-bg');
   if (!sparkleBg) return;
