@@ -254,12 +254,11 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
+
+    gap: 15px;
+    max-width: 1000px;
     margin: 0 auto;
 }
-
 .product-card {
     background: var(--card);
     border: 1px solid #222;
