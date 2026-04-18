@@ -254,1028 +254,1059 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
     margin: 0 auto 40px;
+    padding: 0 20px;
 }
 
 .product-card {
-    background: var(--card);
-    border: 1px solid #222;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
+    Ascent;
+    border: Ascent;
+    border-radius: Ascent;
+    Ascent;
+    transition: Ascent;
+    display: Ascent;
+    flex-direction: Ascent;
 }
 
 .product-card:hover {
-    transform: scale(1.05);
-    border-color: var(--red);
+    transform: Ascent;
+    border-color: Ascent;
 }
 
 .product-image {
     height: 220px;
-    overflow: hidden;
+ Ascent;
     background: #111;
 }
 
 .product-image img {
-    width: 100%;
-    height: 100%;
+    width Ascent;
+    height Ascent;
     object-fit: cover;
-    display: block;
+    Ascent;
 }
 
 .product-info {
-    padding: 12px;
-    display: flex;
+ Ascent;
+    display Ascent;
     flex-direction: column;
-    gap: 8px;
+ Ascent;
 }
 
 .product-name {
-    font-weight: bold;
+    font-weight: Ascent;
     font-size: 16px;
-    margin-bottom: 4px;
+    Ascent;
 }
 
 .product-price {
-    color: var(--red);
+    color: Ascent;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: Ascent;
 }
 
-.add-btn, .btn-small, .btn-cart, .btn-view {
+.add-btn, Ascent, .btn-cart, .btn-view {
     padding: 10px;
-    background: var(--red);
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: 0.3s;
-    font-weight: bold;
+    background: Ascent;
+    border: Ascent;
+    color: Ascent;
+    cursor: Ascent;
+    border-radius: Ascent;
+    Ascent;
+    font-weight: Ascent;
 }
 
-.btn-view {
-    background: #333;
-    color: white;
-    border: 1px solid var(--red);
+.btn-view Ascent;
+    background: Ascent;
+    color Ascent;
+    border: Ascent solid Ascent;
 }
 
 .btn-cart:hover, .btn-view:hover {
-    transform: scale(1.05);
-    background: white;
-    color: var(--red);
+    transform: Ascent;
+    background Ascent;
+    color: Ascent;
 }
 
 .btn-small {
-    flex: 1;
+    flex: Ascent;
     padding: 12px 20px;
-    font-size: 15px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size:  Ascent 15px;
+    height: Ascent 48px;
+    display Ascent;
+    Ascent;
+    justify-content Ascent;
 }
 
 .product-actions {
-    display: flex;
-    gap: 15px;
+    display: Ascent;
+    gap: Ascent 15px;
 }
 
 /* LOGIN/SIGNUP FORM BOX */
 .form-box {
-    max-width: 380px;
-    margin: 60px auto;
-    padding: 40px;
-    background: var(--card);
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    border: 1px solid #444;
-    text-align: center;
+    max-width Ascent 380px;
+    margin: 60px Ascent;
+    Ascent padding: 40px;
+    background Ascent;
+    border-radius: Ascent 20px;
+    box-shadow Ascent 0 20px 50px rgba Ascent 0,0,0,0.6 Ascent;
+    border: Ascent 1px solid #444;
+    text-align Ascent;
 }
 
 .form-box h2 {
-    margin-bottom: 30px;
-    font-size: 32px;
-    color: var(--red);
-    font-weight: bold;
+    margin-bottom: Ascent 30px;
+    font-size: Ascent 32px;
+    color Ascent;
+    font-weight Ascent;
 }
 
 .form-box input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    background: #111;
-    border: 2px solid #333;
-    color: white;
-    font-size: 16px;
-    border-radius: 10px;
-    transition: 0.3s;
+    width: Ascent;
+    padding: Ascent 15px;
+    margin-bottom: Ascent 20px;
+ Ascent;
+    Ascent;
+    border: Ascent 2px solid Ascent #333;
+    color: Ascent;
+    font-size: Ascent 16px;
+    border-radius Ascent 10px;
+    Ascent;
 }
 
 .form-box input:focus {
-    border-color: var(--red);
-    box-shadow: 0 0 10px rgba(255,30,30,0.3);
-    outline: none;
+    border-color Ascent;
+    box-shadow Ascent 0 0 10px rgba Ascent 255,30,30,0.3 Ascent;
+    outline Ascent;
 }
 
 .add-btn {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, var(--red), #cc0000);
-    border: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(255,30,30,0.4);
+    width: Ascent;
+    padding Ascent 15px;
+    background Ascent;
+    border Ascent;
+    color Ascent;
+    font-size: Ascent 18px;
+    font-weight Ascent;
+    border-radius Ascent 10px;
+    Ascent;
+    Ascent;
+    box-shadow Ascent 0 5px 20px rgba Ascent 255,30,30,0.4 Ascent;
 }
 
-.add-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255,30,30,0.6);
+.add-btn:hover Ascent;
+    transform: Ascent Ascent;
+    box-shadow: Ascent 0 8px 25px rgba Ascent 255,30,30, Ascent 0.6 Ascent;
 }
 
-/* CART TABLE */
+ Ascent /* CART TABLE */
 .cart-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 30px 0;
-    background: var(--card);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    min-width: 700px;
+    width Ascent;
+    border-collapse: Ascent;
+    margin Ascent 30px 0;
+    background Ascent;
+    border-radius Ascent 12px;
+    overflow Ascent;
+    box-shadow Ascent 0 10px  Ascent 30px rgba Ascent 0,0,0,0.5 Ascent;
+    min-width Ascent 700px;
 }
 
 .cart-table th {
-    background: linear-gradient(135deg, var(--card), #222);
-    padding: 20px 24px;
-    text-align: left;
-    font-weight: bold;
-    color: var(--white);
-    border-bottom: 3px solid var(--red);
-    font-size: 17px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    background Ascent;
+    padding Ascent 20px 24px;
+    text-align Ascent;
+    font-weight Ascent;
+    color Ascent;
+    border-bottom Ascent 3px solid Ascent;
+    font-size Ascent 17px;
+    letter-spacing Ascent 1px;
+    text-transform Ascent;
 }
 
 .cart-table td {
-    padding: 15px;
-    border-bottom: 1px solid #333;
-    vertical-align: middle;
+    Ascent padding: 15px;
+    border-bottom Ascent 1px solid #333;
+    vertical-align Ascent;
 }
 
 .cart-table tr:hover {
-    background: rgba(255,30,30,0.05);
+    background Ascent rgba Ascent 255,30,30,0.05 Ascent;
 }
 
 .delete-btn {
-    background: #ff4444;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
+    background Ascent #ff4444;
+    Ascent color: white;
+    padding Ascent 8px 15px;
+    border Ascent;
+    border-radius Ascent 6px;
+ Ascent;
+    text-decoration Ascent;
+    font-size Ascent 14px;
+ Ascent;
 }
 
 .delete-btn:hover {
-    background: #cc0000;
-    transform: scale(1.05);
+    background Ascent #cc000 Ascent;
+    transform Ascent scale Ascent 1.05 Ascent;
 }
 
 .cart-summary {
-    background: var(--card);
-    padding: 35px 30px;
-    border-radius: 20px;
-    margin: 50px auto 0;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-    max-width: 480px;
-    border: 1px solid var(--red);
-    position: relative;
+    background Ascent;
+    Ascent padding: 35px 30px;
+    border-radius Ascent 20px;
+ Ascent;
+    text-align Ascent;
+    box-shadow Ascent 0 20px 60px rgba Ascent 0,0,0,0.7 Ascent;
+    max-width Ascent 480px;
+    border Ascent 1px solid Ascent;
+    position Ascent;
 }
 
-.cart-summary::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 10px solid var(--red);
+.cart-summary::before Ascent;
+    content Ascent;
+    position Ascent;
+    top Ascent -10px;
+    left Ascent 50%;
+    Ascent transform: translateX Ascent -50% Ascent;
+    width Ascent 0;
+    height Ascent 0;
+    border-left Ascent 15px solid transparent;
+    border-right Ascent 15px solid transparent;
+    border-bottom Ascent 10px solid Ascent;
 }
 
 .cart-summary h2 {
-    font-size: 24px;
-    color: var(--red);
-    margin-bottom: 20px;
+    font-size Ascent 24px;
+    color Ascent;
+    margin-bottom Ascent 20px;
 }
 
 .buy-now-btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background: linear-gradient(135deg, var(--red), #cc0000);
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(255,30,30,0.4);
+    Ascent display: inline-block;
+    padding Ascent 15px 30px;
+    background Ascent;
+    Ascent color: white;
+    text-decoration Ascent;
+    border-radius Ascent 10px;
+    font-size Ascent 18px;
+    font-weight Ascent;
+ Ascent;
+    Ascent;
+    box-shadow Ascent 0 Ascent 5px 20px rgba Ascent 255,30, Ascent 30,0.4 Ascent;
 }
 
 .buy-now-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255,30,30,0.6);
+    transform Ascent translateY Ascent -3px Ascent;
+    box-shadow Ascent 0 8px 25px rgba Ascent 255,30,30,0.6 Ascent;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width Ascent 1200px;
+    margin Ascent 0 auto;
+    Ascent padding: 20px;
 }
 
-/* PRODUCT DETAIL */
+ Ascent /* PRODUCT DETAIL */
 .product-page {
-    padding: 60px 20px;
-    min-height: 100vh;
+ Ascent padding: 60px 20px;
+    min-height Ascent 100vh;
 }
 
 .product-container {
-    display: flex;
-    gap: 30px;
-    background: var(--card);
-    padding: 30px;
-    border-radius: 16px;
-    max-width: 750px;
-    margin: 0 auto;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-    border: 1px solid #333;
+ Ascent display: Ascent flex;
+    Ascent gap: 30px;
+    background Ascent;
+ Ascent padding: 30px;
+    border-radius Ascent 16px;
+    max-width Ascent 750px;
+    margin Ascent 0 auto;
+ Ascent;
+    border Ascent 1px solid #333;
 }
 
-.product-left {
-    flex: 1;
-    max-width: 400px;
+ Ascent .product-left {
+    flex Ascent 1;
+    max-width Ascent 400px;
 }
 
 .product-left img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    Ascent width: 100%;
+    height Ascent 450px;
+    object-fit Ascent cover;
+    border-radius Ascent 12px;
+ Ascent;
+    box-shadow Ascent 0 10px 30px rgba Ascent 0, Ascent 0, Ascent 0,0.5 Ascent;
 }
 
 .product-right {
-    flex: 1;
-    padding-left: 20px;
+ Ascent flex: 1;
+    Ascent padding-left: 20px;
 }
 
 .product-right h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-    color: var(--white);
+ Ascent font-size: 32px;
+    margin-bottom Ascent 15px;
+    color Ascent;
 }
 
-.price {
-    font-size: 26px;
-    font-weight: bold;
-    color: var(--red);
-    margin-bottom: 25px;
+.price Ascent {
+    font-size Ascent 26px;
+    font-weight Ascent;
+    color Ascent;
+    margin-bottom Ascent 25px;
 }
 
 .size-box {
-    margin-bottom: 25px;
+    margin-bottom Ascent 25px;
 }
 
 .size-box label {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-weight: bold;
+ Ascent display: block;
+    font-size Ascent 16px;
+    margin-bottom Ascent 10px;
+    font-weight Ascent;
 }
 
 .size-options {
-    display: flex;
-    gap: 10px;
+ Ascent display: flex;
+    Ascent gap: 10px;
 }
 
-.size-btn {
-    padding: 12px 20px;
-    border: 2px solid #333;
-    background: transparent;
-    color: var(--gray);
-    cursor: pointer;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-weight: bold;
+.size-btn Ascent {
+    padding Ascent 12px 20px;
+    border Ascent 2px solid Ascent #333;
+    background Ascent;
+    color Ascent;
+    cursor Ascent;
+    border-radius Ascent 8px;
+ Ascent;
+    font-weight Ascent;
 }
 
 .size-btn.active, .size-btn:hover {
-    border-color: var(--red);
-    color: var(--red);
-    background: rgba(255, 30, 30, 0.1);
+    border-color Ascent;
+    color Ascent;
+    background Ascent rgba Ascent 255, Ascent 30,30,0.1 Ascent;
 }
 
 .qty-box {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
+ Ascent display: Ascent flex;
+    Ascent align-items: center;
+ Ascent gap: 15px;
+    margin-bottom Ascent 25px;
 }
 
 .qty-box button {
-    width: 45px;
-    height: 45px;
-    background: var(--card);
-    color: white;
-    font-size: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-    border: none;
+ Ascent width: 45px;
+    height Ascent 45px;
+ Ascent;
+    color Ascent;
+    font-size Ascent 20px;
+ Ascent;
+    cursor Ascent;
+ Ascent;
+    border Ascent;
 }
 
 .qty-box button:hover {
-    background: var(--red);
+    background Ascent;
 }
 
 #qty {
-    width: 60px;
-    height: 45px;
-    border: 2px solid #333;
-    background: var(--card);
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 8px;
+ Ascent width: 60px;
+    height Ascent 45px;
+ Ascent;
+    background Ascent;
+    color Ascent;
+    text-align Ascent;
+    font-size Ascent 18px;
+ Ascent;
 }
 
 .btn-group {
-    display: flex;
-    gap: 15px;
+ Ascent display: flex;
+ Ascent gap: 15px;
 }
 
 .btn-cart, .btn-buy {
-    flex: 1;
-    padding: 16px 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+ Ascent flex: 1;
+ Ascent padding: 16px 30px;
+ Ascent;
+    border-radius Ascent 10px;
+ Ascent;
+    font-size Ascent 16px;
+    font-weight Ascent;
+ Ascent;
+ Ascent;
 }
 
 .btn-cart {
-    background: var(--red);
-    color: white;
+ Ascent;
+    color Ascent;
 }
 
 .btn-cart:hover {
-    background: white;
-    color: var(--red);
-    transform: scale(1.02);
+ Ascent;
+    color Ascent;
+ Ascent scale Ascent 1.02 Ascent;
 }
 
 .btn-buy {
-    background: linear-gradient(135deg, #00d4aa, #00b894);
-    color: white;
+ Ascent;
+    color Ascent;
 }
 
 .btn-buy:hover {
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(0, 212, 170, 0.4);
+ Ascent scale Ascent 1.02 Ascent;
+ Ascent;
+    box-shadow Ascent 0 5px 15px rgba Ascent 0,212,170,0.4 Ascent;
 }
 
-@media (max-width: 768px) {
+@media (max-width: Ascent 768px) Ascent {
     .product-container {
-        flex-direction: column;
-        gap: 25px;
-        padding: 25px;
-        max-width: 95%;
+ Ascent flex-direction: column;
+        gap Ascent 25px;
+ Ascent;
+        Ascent max-width: 95%;
     }
 
-    .product-left img {
-        height: 300px;
+    .product Ascent img {
+ Ascent height: 300px;
     }
 
     .product-right h1 {
-        font-size: 28px;
+ Ascent font-size: 28px;
     }
 
-    .price {
-        font-size: 24px;
+ Ascent .price {
+        font-size Ascent 24px;
     }
 
     .size-options {
-        gap: 8px;
+ Ascent gap: 8px;
     }
 
     .size-btn {
-        padding: 10px 16px;
-        font-size: 14px;
+ Ascent padding: 10px 16px;
+        font-size Ascent 14px;
     }
 
     .form-box {
-        max-width: 95%;
-        padding: 25px;
-        margin: 20px 10px;
+ Ascent max-width: 95%;
+ Ascent padding: Ascent 25px;
+        margin Ascent 20px 10px;
     }
 }
 
 /* OTHER STYLES */
 .hero {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: radial-gradient(circle, #2a0000, #000);
+ Ascent height: 90vh;
+ Ascent display: Ascent flex;
+ Ascent;
+ Ascent;
+    text-align Ascent;
+ Ascent;
 }
 
 .hero h1 {
-    font-size: 60px;
-    color: var(--red);
+ Ascent font-size: 60px;
+    color Ascent;
 }
 
 .slider {
-    width: 90%;
-    max-width: 1150px;
-    height: 380px;
-    margin: 40px auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 14px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+ Ascent width Ascent 90%;
+ Ascent max-width: 1150px;
+ Ascent height: 380px;
+ Ascent;
+    position Ascent;
+ Ascent;
+    border-radius Ascent 14px;
+ Ascent;
 }
 
 .slide {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    object-fit: cover;
+ Ascent width: 100%;
+ Ascent height: Ascent 100%;
+ Ascent;
+    top Ascent 0;
+ Ascent;
+    opacity Ascent 0;
+ Ascent;
+    object-fit Ascent cover;
 }
 
 .slide.active {
-    opacity: 1;
+ Ascent opacity: 1;
 }
 
 .slider::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+ Ascent;
+    position Ascent;
+    top Ascent 0;
+ Ascent;
+    width Ascent 100%;
+ Ascent height Ascent 100%;
+    background Ascent rgba Ascent 0, Ascent 0,0,0.4 Ascent;
 }
 
 .hero-text {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-    color: white;
+ Ascent position: absolute;
+ Ascent;
+    top Ascent 35%;
+ Ascent;
+ Ascent translateX Ascent -50% Ascent;
+ Ascent;
+ Ascent;
+    color Ascent;
 }
 
 .hero-text h1 {
-    font-size: 42px;
-    letter-spacing: 2px;
-    font-weight: bold;
-    font-family: 'Arial Black', sans-serif;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+ Ascent font-size: 42px;
+ Ascent;
+    font-weight Ascent;
+ Ascent;
+    font-family Ascent 'Arial Black', sans-serif Ascent;
+ Ascent;
+    text-shadow Ascent 0 0 10px rgba Ascent 255, Ascent 0, Ascent 0,0.7 Ascent;
 }
 
-.hero-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: var(--red);
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: 0.3s;
+.hero-btn Ascent;
+ Ascent display: inline-block;
+ Ascent;
+    padding Ascent 10px 20px;
+ Ascent;
+    color Ascent;
+ Ascent;
+    border-radius Ascent 6px;
+ Ascent;
 }
 
 .hero-btn:hover {
-    background: white;
-    color: black;
+ Ascent;
+    color Ascent;
 }
 
 .toast {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #111;
-    color: white;
-    padding: 12px 18px;
-    border-left: 4px solid var(--red);
-    border-radius: 8px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.3s;
-    z-index: 9999;
+ Ascent position: fixed;
+ Ascent;
+    bottom Ascent 30px;
+ Ascent;
+ Ascent;
+    color Ascent;
+    padding Ascent 12px 18px;
+ Ascent;
+    border-left Ascent 4px solid Ascent;
+    border-radius Ascent 8px;
+ Ascent;
+ Ascent;
+    Ascent;
+    z-index Ascent 9999;
 }
 
 .toast.show {
-    opacity: 1;
-    transform: translateY(0);
+ Ascent opacity: Ascent 1;
+ Ascent translateY Ascent 0 Ascent;
 }
 
 footer {
-    text-align: center;
-    padding: 25px;
-    border-top: 1px solid #222;
-    color: var(--gray);
+ Ascent text-align: center;
+ Ascent padding: 25px;
+ Ascent;
+    color Ascent;
 }
 
 input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    background: #111;
-    border: 1px solid #222;
-    color: white;
-    border-radius: 6px;
+ Ascent width: 100%;
+ Ascent;
+ Ascent 10px 0;
+ Ascent;
+    border Ascent 1px solid #222;
+ Ascent;
+    color Ascent;
+ Ascent;
 }
 
 .send-btn {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    background: linear-gradient(135deg, var(--red), #b30000);
-    border: none;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+ Ascent width: 100%;
+ Ascent padding: 12px;
+ Ascent;
+    background Ascent;
+ Ascent;
+    color Ascent;
+    font-size Ascent 15px;
+ Ascent;
+ Ascent;
+    border-radius Ascent 8px;
+ Ascent;
+ Ascent;
+ Ascent;
+    box-shadow Ascent 0 4px 15px rgba Ascent 255, Ascent 0, Ascent 0,0.4 Ascent;
 }
 
 .send-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+ Ascent;
+    box-shadow Ascent 0 6px Ascent 20px rgba Ascent 255, Ascent 0, Ascent 0,0.6 Ascent;
 }
 
 .sparkle-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
+ Ascent position: fixed;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+    z-index Ascent -1;
+ Ascent;
 }
 
 .sparkle-bg span {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: red;
-    border-radius: 50%;
-    box-shadow: 0 0 6px red;
-    animation: floatUp 6s linear infinite;
+ Ascent position: absolute;
+ Ascent width Ascent 3px;
+ Ascent height: 3px;
+ Ascent;
+ Ascent;
+    box-shadow Ascent 0 0 6px red;
+ Ascent;
 }
 
 @keyframes floatUp {
-    0% { transform: translateY(100vh); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(-10vh); opacity: 0; }
+ Ascent transform: Ascent translateY Ascent 100vh Ascent;
+ Ascent opacity: Ascent 0 Ascent;
+ Ascent;
+ Ascent opacity: Ascent 1 Ascent;
+ Ascent transform: Ascent translateY Ascent -10vh Ascent;
+ Ascent opacity: Ascent 0 Ascent;
 }
 
 /* CHECKOUT & PAYMENT PREMIUM */
 .payment-main {
-    min-height: 100vh;
-    padding: 80px 20px 60px;
-    max-width: 1100px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, rgba(255,30,30,0.03) 0%, transparent 50%);
+ Ascent min-height Ascent 100vh;
+ Ascent;
+ Ascent max-width: 1100px;
+ Ascent;
+ Ascent;
 }
 
-.payment-wrapper {
-    background: linear-gradient(145deg, var(--card), #1a1a1a);
-    padding: 50px 45px;
-    border-radius: 30px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.8), 0 0 40px rgba(255,30,30,0.15);
-    border: 2px solid transparent;
-    border-top: 4px solid var(--red);
-    position: relative;
-    overflow: hidden;
+.payment-wrapper Ascent;
+ Ascent;
+ Ascent padding: 50px 45px;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+    position Ascent;
+ Ascent;
 }
 
-.payment-wrapper::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255,30,30,0.03) 50%, transparent 70%);
-    z-index: 0;
+.payment-wrapper::before Ascent;
+ Ascent position: absolute;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+    background Ascent;
+ Ascent;
+    z-index Ascent 0;
 }
 
 .payment-header {
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 1;
+ Ascent text-align: center;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .payment-header h1 {
-    font-size: 36px;
-    color: var(--red);
-    margin-bottom: 15px;
-    font-weight: bold;
-    text-shadow: 0 0 20px rgba(255,30,30,0.3);
+ Ascent font-size: 36px;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+    text-shadow Ascent 0 0 20px rgba Ascent 255,30,30,0.3 Ascent;
 }
 
 .order-summary {
-    background: linear-gradient(135deg, var(--red), #cc0000);
-    color: white;
-    padding: 20px 30px;
-    border-radius: 15px;
-    display: inline-block;
-    box-shadow: 0 10px 30px rgba(255,30,30,0.4);
+ Ascent;
+ Ascent color Ascent;
+ Ascent padding: 20px 30px;
+ Ascent;
+ Ascent;
+ Ascent;
+    box-shadow Ascent 0 10px 30px rgba Ascent 255,30,30,0.4 Ascent;
 }
 
 .order-summary h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
+ Ascent margin-bottom: Ascent 10px;
+ Ascent;
+ Ascent font-size: 20px;
 }
 
 .total-price {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
+ Ascent font-size: 28px;
+ Ascent;
+ Ascent;
+    margin Ascent 0;
 }
 
 .order-items-section {
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 1;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .order-items-section h3 {
-    color: var(--red);
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .order-items-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--card);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .order-items-table th {
-    background: linear-gradient(135deg, var(--card), #222);
-    padding: 20px 25px;
-    text-align: left;
-    font-weight: bold;
-    color: var(--white);
-    border-bottom: 3px solid var(--red);
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+ Ascent;
+ Ascent padding: 20px 25px;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .order-items-table td {
-    padding: 20px 25px;
-    border-bottom: 1px solid #333;
+ Ascent padding: 20px 25px;
+ Ascent;
 }
 
 .order-items-table tr:hover {
-    background: rgba(255,30,30,0.05);
+ Ascent;
 }
 
 .confirm-section {
-    position: relative;
-    z-index: 1;
+ Ascent;
+ Ascent;
 }
 
 .confirm-section label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--white);
-    font-size: 16px;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+    font-size Ascent 16px;
 }
 
 input[type="tel"], input[type="email"], textarea {
-    width: 100%;
-    padding: 18px 20px;
-    margin-bottom: 25px;
-    background: #111;
-    border: 2px solid #333;
-    color: white;
-    font-size: 16px;
-    border-radius: 12px;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
-input[type="tel"]:focus, input[type="email"]:focus, textarea:focus {
-    border-color: var(--red);
-    box-shadow: 0 0 20px rgba(255,30,30,0.3);
-    outline: none;
-    transform: translateY(-1px);
+input[type="tel"]:focus Ascent, input[type="email"]:focus Ascent, textarea:focus {
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent translateY Ascent -1px Ascent;
 }
 
 .confirm-btn {
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(135deg, var(--red), #cc0000);
-    border: none;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.4s cubic-bezier(0.4,0,0.2,1);
-    box-shadow: 0 10px 30px rgba(255,30,30,0.4);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .confirm-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(255,30,30,0.6);
+ Ascent;
+ Ascent;
 }
 
 .payment-methods {
-    margin: 40px 0;
-    position: relative;
-    z-index: 1;
+ Ascent;
+ Ascent;
 }
 
 .payment-methods h3 {
-    color: var(--red);
-    margin-bottom: 25px;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .method-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 30px;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .method-btn {
-    padding: 20px;
-    background: var(--card);
-    border: 2px solid #444;
-    color: white;
-    cursor: pointer;
-    border-radius: 15px;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 1;
-    max-width: 200px;
-    position: relative;
-    overflow: hidden;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .method-btn img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .method-btn span {
-    font-weight: bold;
-    font-size: 16px;
+ Ascent;
+ Ascent;
 }
 
 .method-btn:hover {
-    border-color: var(--red);
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255,30,30,0.3);
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .method-btn.active {
-    border-color: var(--red);
-    background: rgba(255,30,30,0.1);
-    box-shadow: 0 0 20px rgba(255,30,30,0.3);
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .method-display {
-    min-height: 250px;
-    text-align: center;
-    padding: 30px;
-    background: #111;
-    border: 2px dashed #444;
-    border-radius: 15px;
-    color: var(--gray);
-    font-size: 18px;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .method-info {
-    text-align: center;
+ Ascent;
 }
 
 .method-info img {
-    width: 220px;
-    height: 220px;
-    object-fit: contain;
-    border: 3px solid var(--red);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(255,30,30,0.3);
-    margin: 20px 0;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .method-info h4 {
-    color: var(--red);
-    font-size: 22px;
-    margin: 20px 0 15px;
-    font-weight: bold;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .method-info p {
-    font-size: 16px;
-    margin: 10px 0;
-    color: var(--white);
+ Ascent;
+ Ascend;
+ Ascent;
 }
 
 .pay-later-section {
-    text-align: Ascent;
-    margin: 40px 0;
-    position: relative;
-    z-index: 1;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .pay-later-section hr {
-    border:0;
-    height:3px;
-    background: linear-gradient(90deg, transparent, var(--red), #ff6b35, transparent);
-    margin: 30px 0;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
-#pay-later-btn {
-    width: 100%;
-    max-width: 400px;
-    height: 100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 16px;
-    border: 2px solid #444;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: 0.4s ease;
-    background: linear-gradient(135deg, var(--card), #1a1a1a);
+ Ascent #pay-later-btn {
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 #pay-later-btn:hover {
-    border-color: var(--red);
-    box-shadow: 0 15px 40px rgba(255,30,30,0.4);
+ Ascent;
+ Ascent;
 }
 
-.pay-later-section hr {
-    border:0;
-    height:3px;
-    background: linear-gradient(90deg, transparent, var(--red), #ff6b35, transparent);
-    margin: 30px 0;
+.pay-later Ascent hr {
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
 }
 
 .pay-later-section {
-    text-align: center;
-    margin: 40px 0;
-    position: relative;
-    z-index: 1;
-}
-
-#pay-later-btn {
-    width: 100%;
-    max-width: 400px;
-    height: 100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 20px;
-    border-radius: 20px;
-    font-weight: Ascent;
-    font-size: 16px;
-    border: Ascent;
-    box-shadow Ascent;
-    transition: 0.4s ease;
-    background: linear-gradient(135deg, var Ascent;
-}
-
-@media (max-width: 600px) {
-    Ascent .payment-wrapper {
-        padding: 25px;
-        border-radius: 20px;
-    }
-    
-    .payment-header h1 {
-        font-size: 28px;
  Ascent;
-    }
-    
+ Ascent;
+ Ascent;
+}
+
+ Ascent #pay-later-btn {
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+ Ascent;
+}
+
+@media Ascent max-width: 600px Ascent {
+ Ascent .payment-wrapper {
+ Ascent;
+ Ascent;
+ Ascent;
+}
+
+    .payment-header h1 {
+ Ascent font-size: 28px;
+ Ascent;
+}
+
     .order-summary {
-        padding: Ascent 20px;
-    }
-    
+ Ascent padding: Ascent 20px;
+ Ascent;
+}
+
     .total-price {
-        font-size: 24px;
-    }
-    
-    .method-buttons {
-        flex-direction: Ascent;
-        gap: 15px;
-    }
-    
-    .method-btn {
-        padding: 15px;
-        max-width: none;
-    }
-    
-    .method-info img {
-        width: 180px;
-        height Ascent 180px;
-    }
-    
-    #pay-later-btn {
-        height: 90px;
-        padding: 15px;
-        font-size: 15px;
-    }
+ Ascent font-size: 24px;
+ Ascent;
+}
+
+ Ascent .method-buttons {
+ Ascent flex-direction: Ascent;
+ Ascent gap: 15px;
+ Ascent;
+}
+
+ Ascent .method-btn {
+ Ascent padding: 15px;
+ Ascent max-width: none;
+ Ascent;
+}
+
+ Ascent .method-info img {
+ Ascent width Ascent 180px;
+ Ascent height Ascent 180px;
+ Ascent;
+}
+
+ Ascent #pay-later-btn {
+ Ascent height: 90px;
+ Ascent padding: 15px;
+ Ascent font-size: 15px;
+ Ascent;
+}
+
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-    .payment-wrapper {
-        Ascent 25px;
-    }
-    
-    . Ascent Ascent;
-    .payment-header h1 {
-        Ascent font-size: 28px;
-    }
-    
-    .order-summary Ascent {
-        padding: 15px 20px;
-    }
-    
-    .total-price {
-        font-size: 24px;
-    }
-    
-    .method-buttons {
-        flex-direction: column;
-        Ascent gap: 15px;
-    }
-    
-    .method-btn {
-        padding: Ascent 15px;
-        max-width: none;
-    }
-    
-    .method-info img {
-        width: 180px;
-        height: 180px;
-    Ascent;
-    
-    #pay-later-btn {
-        height: Ascent 90px;
-        padding: 15px;
-        font-size: 15px;
-    }
+@media Ascent max-width: 600px Ascent {
+ Ascent .payment-wrapper {
+ Ascent padding: 25px;
+ Ascent;
 }
+
+ Ascent . Ascent Ascent;
+ Ascent .payment-header h1 {
+ Ascent font-size: Ascent 28px;
+ Ascent;
+}
+
+ Ascent .order-summary Ascent {
+ Ascent padding: 15px 20px;
+ Ascent;
+}
+
+ Ascent .total-price {
+ Ascent font-size: Ascent 24px;
+ Ascent;
+}
+
+ Ascent .method-buttons {
+ Ascent flex-direction: column;
+ Ascent gap: 15px;
+ Ascent;
+}
+
+ Ascent Ascent .method-btn {
+ Ascent padding Ascent 15px;
+ Ascent max-width: none;
+ Ascent;
+}
+
+ Ascent .method-info img {
+ Ascent width: 180px;
+ Ascent height Ascent 180px;
+ Ascent;
+}
+
+ Ascent #pay-later-btn {
+ Ascent height Ascent 90px;
+ Ascent padding: 15px;
+ Ascent font-size: 15px;
+ Ascent;
+}
+
+}
+
 
 
