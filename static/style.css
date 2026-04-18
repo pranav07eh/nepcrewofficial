@@ -409,12 +409,14 @@ body {
 }
 
 .cart-table th {
-    background: #222;
-    padding: 15px;
+    background: linear-gradient(135deg, #1a1a1a, #222);
+    padding: 18px 20px;
     text-align: left;
     font-weight: bold;
     color: var(--white);
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid var(--red);
+    font-size: 16px;
+    letter-spacing: 0.5px;
 }
 
 .cart-table td {
@@ -446,13 +448,13 @@ body {
 
 .cart-summary {
     background: var(--card);
-    padding: 25px;
-    border-radius: 12px;
-    margin-top: 30px;
+    padding: 30px;
+    border-radius: 16px;
+    margin: 40px auto 0;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    max-width: 400px;
-    margin-left: auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    max-width: 450px;
+    border: 1px solid #444;
 }
 
 .cart-summary h2 {
