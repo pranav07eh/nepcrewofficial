@@ -4,7 +4,7 @@ services:
     env: python
 buildCommand: "pip install -r requirements.txt && python manage.py migrate --noinput && python manage.py collectstatic --noinput"
 
-startCommand: "gunicorn --bind 0.0.0.0:$PORT backend2pm.wsgi:application"
+startCommand: "gunicorn --bind 0.0.0.0:$PORT --pythonpath /opt/render/project/src backend2pm.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.12
