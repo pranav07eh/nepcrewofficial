@@ -16,26 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      document.getElementById('selectedSize').value = btn.dataset.size;
+      const sizeInput = document.getElementById('selectedSize');
+      if (sizeInput) sizeInput.value = btn.dataset.size;
     });
   });
-  
-  // MOBILE HAMBURGER MENU
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
-  
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking link
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-      });
-    });
-  }
   
   // TOAST
   function showToast(message) {
@@ -57,11 +41,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Contact form submit prevention (handled server-side)
-  const contactForm = document.querySelector('form[action=""]');
+  // Contact form
+  const contactForm = document.querySelector('form[action]');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-      // Let POST happen server-side
+      // Server-side handled
     });
   }
+
+  // Cart quantity +/- 
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('qty-plus') || e.target.classList.contains('qty-minus')) {
+      const input = e.target.parentNode.querySelector('input');
+      let val = parseInt(input.value) || 0;
+      if (e.target.classList.contains('qty-plus')) val++;
+      else if (val > 1) val--;
+      input.value = val;
+    }
+  });
 });
+
