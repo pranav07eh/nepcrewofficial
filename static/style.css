@@ -508,7 +508,7 @@ body {
     font-weight: bold;
 }
 
-.form-box input {
+.form-box input, .form-box textarea {
     width: 100%;
     padding: 18px;
     margin-bottom: 20px;
@@ -518,6 +518,12 @@ body {
     font-size: 16px;
     border-radius: 12px;
     transition: 0.3s;
+    resize: vertical;
+}
+
+.form-box textarea {
+    min-height: 150px;
+    font-family: inherit;
 }
 
 .form-box input:focus {
