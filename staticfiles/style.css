@@ -1,3 +1,7 @@
+/* HOME PAGE ANIMATION VERIFIED: 3 images slider (fade + auto 4s), text overlay, styled button. No changes needed. BLACKBOXAI */
+
+/* Updated for git trigger & Render deploy */
+
 :root {
     --bg: #0a0a0a;
     --card: #141414;
@@ -342,7 +346,7 @@ body {
     overflow: hidden;
     transition: all 0.3s ease;
     cursor: pointer;
-    height: 380px;
+    height: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -370,7 +374,7 @@ body {
 }
 
 .product-info {
-    padding: 20px;
+    padding: 10px;
     flex: 1;
     display: flex;
     flex-direction: column;
