@@ -3,19 +3,21 @@
 
 {% block content %}
 <section class="hero">
-  <div class="slider">
+  <div class="slider-container">
     <div class="hero-text">
-      <h1>WELCOME TO NEPCREW</h1>
-      <p>Esports • Streetwear • Footwear</p>
+      <h1>NEPCREW</h1>
+      <p>Premium Streetwear • Esports • Footwear</p>
       <a href="{% url 'products' %}" class="hero-btn">Shop Now</a>
     </div>
-    <img src="{% static 'images/streetwear.png' %}" class="slide active" alt="Streetwear">
-    <img src="{% static 'images/footwear.png' %}" class="slide" alt="Footwear">
-    <img src="{% static 'images/shoes.png' %}" class="slide" alt="Shoes">
-    <div class="slider-nav">
-      <div class="slider-dot active"></div>
-      <div class="slider-dot"></div>
-      <div class="slider-dot"></div>
+    <div class="slider">
+      <img src="{% static 'images/streetwear.png' %}" class="slide active" alt="Streetwear">
+      <img src="{% static 'images/footwear.png' %}" class="slide" alt="Footwear">
+      <img src="{% static 'images/shoes.png' %}" class="slide" alt="Shoes">
+      <div class="slider-nav">
+        <span class="slider-dot active"></span>
+        <span class="slider-dot"></span>
+        <span class="slider-dot"></span>
+      </div>
     </div>
   </div>
 </section>
