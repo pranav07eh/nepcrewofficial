@@ -34,12 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000);
   }
 
-  // Track add to cart events
-  document.querySelectorAll('.add-btn, .btn-cart').forEach(btn => {
-    btn.addEventListener('click', () => {
-      showToast('Added to cart!');
+// Track add to cart events - only on product pages
+  if (window.location.pathname.includes('products') || window.location.pathname.includes('product_detail')) {
+    document.querySelectorAll('.add-btn, .btn-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showToast('Added to cart!');
+      });
     });
-  });
+  }
 
   // Contact form
   const contactForm = document.querySelector('form[action]');
