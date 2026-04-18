@@ -254,10 +254,10 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-    max-width: 900px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
 }
 
 .product-card {
@@ -331,13 +331,18 @@ body {
 }
 
 .btn-small {
-    padding: 8px 16px;
-    font-size: 14px;
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 15px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-actions {
     display: flex;
-    gap: 8px;
+    gap: 15px;
 }
 
 /* LOGIN/SIGNUP FORM BOX */
