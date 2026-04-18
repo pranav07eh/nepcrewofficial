@@ -24,6 +24,14 @@ def about(request):
 def contact(request):
     clear_abandoned_cart(request)
     cart_item_count = CartItem.objects.filter(user=request.user).count() if request.user.is_authenticated else 0
+    if request.method == 'POST':
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        message = request.POST.get('message', '')
+        # Here: send email or save to DB
+        print(f"Contact form: {name}, {email}, {phone}, {message}")  # Temp log
+        return render(request, "contact.html", {"cart_item_count": cart_item_count, "success": "Message sent!"})
     return render(request, "contact.html", {"cart_item_count": cart_item_count})
 
 def products(request):
