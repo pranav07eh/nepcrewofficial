@@ -39,7 +39,8 @@
   </div>
 </nav>
 
-<main style="padding-top: 80px; min-height: calc(100vh - 160px);">
+<main style="padding-top: 80px; min-height: calc(100vh - 160px); position: relative;">
+  <div class="sparkle-bg"></div>
   {% block content %}{% endblock %}
 </main>
 
@@ -52,6 +53,8 @@
   <!-- Analytics -->
   <script src="{% static 'js/analytics.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/sparkles.js' %}"></script>
 
 </body>
+
 </html>

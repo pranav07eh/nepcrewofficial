@@ -723,7 +723,7 @@ transform:scale(1.05);
     background:#ddd;
     }
 
-    body{
+body{
         position:relative;
         overflow-x:hidden;
         }
