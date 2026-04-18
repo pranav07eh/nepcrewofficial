@@ -67,7 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'django.contrib.staticfiles.context_processors.static',  # Disabled - Render import error; not required
+'django.template.context_processors.static',
             ],
         },
     },
