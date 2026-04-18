@@ -255,8 +255,8 @@ body {
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
+    gap: 50px;
+    max-width: 600px;
     margin: 0 auto 40px;
 }
 
@@ -651,7 +651,7 @@ body {
 }
 
 .btn-buy {
-    background: linear-gradient(135deg, #00d4aa, #00b894);
+    background: linear-gradient(135deg, #c90909, #00b894);
     color: white;
 }
 
