@@ -1,65 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // SLIDER AUTO
-  let currentSlide = 0;
+  // Slider
   const slides = document.querySelectorAll('.slide');
-  
-  function nextSlide() {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }
-  
-  setInterval(nextSlide, 4000);
-  
-  // SIZE BUTTONS
-  document.querySelectorAll('.size-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const sizeInput = document.getElementById('selectedSize');
-      if (sizeInput) sizeInput.value = btn.dataset.size;
+  const dots = document.querySelectorAll('.slider-dot');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
     });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Auto slide
+  setInterval(nextSlide, 4000);
+
+  // Manual dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index));
   });
-  
-  // TOAST
-  function showToast(message) {
+
+  // Cart count
+  const cartCount = document.getElementById('cart-count');
+  if (cartCount) {
+    fetch('/cart-count/')
+      .then(res => res.json())
+      .then(data => cartCount.textContent = data.count);
+  }
+
+  // Toast
+  function showToast(message, type = 'success') {
     const toast = document.createElement('div');
-    toast.className = 'toast';
+    toast.className = `toast ${type}`;
     toast.textContent = message;
     document.body.appendChild(toast);
     setTimeout(() => toast.classList.add('show'), 100);
     setTimeout(() => {
       toast.classList.remove('show');
-      setTimeout(() => document.body.removeChild(toast), 300);
+      setTimeout(() => toast.remove(), 300);
     }, 3000);
   }
 
-// Track add to cart events - only on product pages
-  if (window.location.pathname.includes('products') || window.location.pathname.includes('product_detail')) {
-    document.querySelectorAll('.add-btn, .btn-cart').forEach(btn => {
-      btn.addEventListener('click', () => {
-        showToast('Added to cart!');
-      });
+  // Add to cart feedback
+  document.querySelectorAll('form[action*="/add_to_cart"]').forEach(form => {
+    form.addEventListener('submit', function() {
+      showToast('Added to cart!');
     });
-  }
-
-  // Contact form
-  const contactForm = document.querySelector('form[action]');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      // Server-side handled
-    });
-  }
-
-  // Cart quantity +/- 
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('qty-plus') || e.target.classList.contains('qty-minus')) {
-      const input = e.target.parentNode.querySelector('input');
-      let val = parseInt(input.value) || 0;
-      if (e.target.classList.contains('qty-plus')) val++;
-      else if (val > 1) val--;
-      input.value = val;
-    }
   });
 });
-
