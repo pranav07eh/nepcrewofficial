@@ -67,7 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-'django.contrib.staticfiles.context_processors.static',
+# 'django.contrib.staticfiles.context_processors.static',  # Disabled for Render import issue; static tags work without
             ],
         },
     },
