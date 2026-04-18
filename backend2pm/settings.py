@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-'django.contrib.staticfiles.apps.StaticFilesConfig',
+    'django.contrib.staticfiles',
     'nepcrewpage',
 ]
 
@@ -67,7 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-# 'django.contrib.staticfiles.context_processors.static',  # Disabled for Render import issue; static tags work without
+                # 'django.contrib.staticfiles.context_processors.static',  # Disabled - Render import error; not required
             ],
         },
     },
